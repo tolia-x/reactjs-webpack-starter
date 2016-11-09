@@ -30,9 +30,9 @@ module.exports = function makeWebpackConfig() {
     };
 
     config.output = {
-        path: path.join(paths.dist, 'app'),
+        path: path.join(paths.dist),
         filename: 'js/[name].js',
-        publicPath: '/app/'
+        publicPath: '/'
     };
 
     if (isTest) {
@@ -101,7 +101,7 @@ module.exports = function makeWebpackConfig() {
         new CopyWebpackPlugin([
             {
                 from: path.join(paths.src, 'index.html'),
-                to: paths.dist
+                to: './'
             },
             {
                 from: path.join(paths.src, 'assets')
